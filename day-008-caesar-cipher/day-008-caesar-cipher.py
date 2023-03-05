@@ -48,26 +48,102 @@ def prime_checker(number):
 n = int(input("Check this number: "))
 prime_checker(number=n)
 
-#%% Caesar Cipher
+#%% Caesar Cipherv 01
 
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
 direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
 text = input("Type your message:\n").lower()
 shift = int(input("Type the shift number:\n"))
+ 
+def enript(plain_text, shift_amount):
+    chiper_text = ""
+    for letter in plain_text:
+        position = alphabet.index(letter)
+        new_position = position + shift_amount
+        chiper_text = chiper_text + alphabet[new_position]
+    print(f"the encoded text is {chiper_text}")
 
-#TODO-1: Create a function called 'encrypt' that takes the 'text' and 'shift' as inputs.
+def decript(cipher_text, shift_amount):
+    plain_text = ""
+    for letter in cipher_text:
+        position = alphabet.index(letter)
+        new_position = position - shift_amount
+        plain_text = plain_text + alphabet[new_position]
+    print(f"the decoded text is {plain_text}")
 
-    #TODO-2: Inside the 'encrypt' function, shift each letter of the 'text' forwards in the alphabet by the shift amount and print the encrypted text.  
-    #e.g. 
-    #plain_text = "hello"
-    #shift = 5
-    #cipher_text = "mjqqt"
-    #print output: "The encoded text is mjqqt"
+if direction == "encode":
+    enript(plain_text=text, shift_amount=shift)
+elif direction == "decode":
+    decript(cipher_text=text, shift_amount=shift)
 
-    ##HINT: How do you get the index of an item in a list:
-    #https://stackoverflow.com/questions/176918/finding-the-index-of-an-item-in-a-list
 
-    ##🐛Bug alert: What happens if you try to encode the word 'civilization'?🐛
 
-#TODO-3: Call the encrypt function and pass in the user inputs. You should be able to test the code and encrypt a message. 
+#%% Caesar Cipherv 02
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+text = input("Type your message:\n").lower()
+shift = int(input("Type the shift number:\n"))
+
+def caesary(start_txt, shift_amount, cipher_direction):
+    end_text = ""
+    # we need to move this out of for loop
+    if cipher_direction == "decode":
+        shift_amount = shift_amount * -1
+    for letter in start_txt:
+        position = alphabet.index(letter)
+        # if cipher_direction == "decode":
+        #     shift_amount = shift_amount * -1
+            # because 5 * -1 = -5
+        new_position = position + shift_amount
+        end_text += alphabet[new_position]
+    print(f"The {cipher_direction}d text is {end_text}" )
+    #this was a bug
+
+caesary(start_txt=text, shift_amount=shift, cipher_direction=direction)
+
+
+
+
+#%% Caesar Cipher v03
+from art import logo
+
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+
+def caesar(start_txt, shift_amount, cipher_direction):
+    end_text = ""
+    # we need to move this out of for loop
+    if cipher_direction == "decode":
+        shift_amount = shift_amount * -1
+    for char in start_txt:
+        #position = alphabet.index(char)
+        # if cipher_direction == "decode":
+        #     shift_amount = shift_amount * -1
+            # because 5 * -1 = -5
+        if char in alphabet: # only if input is in aplhabet
+            position = alphabet.index(char)
+            new_position = position + shift_amount
+            end_text += alphabet[new_position]
+        else:
+            end_text += char
+    print(f"The {cipher_direction}d text is {end_text}" )
+    #this was a bug
+print(logo)
+
+should_end = False
+while not should_end:
+    direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+    text = input("Type your message:\n").lower()
+    shift = int(input("Type the shift number:\n"))
+    shift = shift % 26 # this will let you fit whatever user enter in to 26
+    caesar(start_txt=text, shift_amount=shift, cipher_direction=direction)
+
+    check_end = input("do you want to continue? (yes or no): ")
+
+    if check_end == "no":
+        should_end = True
+        print("bye..")
+
+# %%
