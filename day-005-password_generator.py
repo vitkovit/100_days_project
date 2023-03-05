@@ -3,14 +3,14 @@
 # 🚨 Don't change the code below 👇
 student_heights = input("Input a list of student heights ").split()
 for n in range(0, len(student_heights)):
-  intstudent_heights[n] = int(student_heights[n])
+  student_heights[n] = student_heights[n]
 # 🚨 Don't change the code above 👆
 
 #Write your code below this row 👇
 
 total_height = 0
 for height in student_heights:
-  total_height += height
+  total_height = total_height + float(height)
 print(f"total height = {total_height}")
 
 number_of_students = 0
@@ -34,14 +34,14 @@ print(average_height)
 # 🚨 Don't change the code below 👇
 student_scores = input("Input a list of student scores ").split()
 for n in range(0, len(student_scores)):
-  student_scores[n] = int(student_scores[n])
+  student_scores[n] = student_scores[n]
 print(student_scores)
 # 🚨 Don't change the code above 👆
 
 #Write your code below this row 👇
 highes_score = 0
 for score in student_scores:
-    if score > highes_score:
+    if int(score) > int(highes_score):
       highes_score = score
 print(f"The highest score in the class is: {highes_score}")
 
