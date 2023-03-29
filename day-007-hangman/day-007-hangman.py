@@ -20,8 +20,8 @@ for letter in random_word:
 for _ in range(len(random_word)):
     letter_placeholder += "_"
 
-# print(listed_word)
-# print(letter_placeholder)
+print(listed_word)
+print(letter_placeholder)
 
 while not end_of_geme:
     guess_letter = input("Guess the letter: ").lower()
@@ -41,3 +41,5 @@ while not end_of_geme:
         print("you are a looser!")
         end_of_geme = True
     print(stages[lives])
+
+# %%
