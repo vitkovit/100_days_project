@@ -23,7 +23,7 @@ while True:
     selected_mode = input("Select difficulty 'easy' or 'hard': ").lower()
     if selected_mode == 'easy' or selected_mode == 'hard':
         break
-
+ 
 if selected_mode == 'easy':
     number_of_guesses = 10
 else:
