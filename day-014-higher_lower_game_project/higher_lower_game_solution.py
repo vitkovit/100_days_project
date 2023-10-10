@@ -3,27 +3,7 @@ import random
 from art import logo, vs
 from replit import clear
 
-# Generate a random account from the game data.
 
-# Format account data into printable format.
-
-# Ask user for a guess.
-
-# Check if user is correct.
-## Get follower count.
-## If Statement
-
-# Feedback.
-
-# Score Keeping.
-
-# Make game repeatable.
-
-# Make B become the next A.
-
-# Add art.
-
-# Clear screen between rounds.
 
 def format_data(account):
     account_name = account['name']
@@ -67,3 +47,25 @@ while game_should_continue:
     else:
         game_should_continue = False
         print(f"you are wrong, final score is {score}")
+
+# Generate a random account from the game data.
+
+# Format account data into printable format.
+
+# Ask user for a guess.
+
+# Check if user is correct.
+## Get follower count.
+## If Statement
+
+# Feedback.
+
+# Score Keeping.
+
+# Make game repeatable.
+
+# Make B become the next A.
+
+# Add art.
+
+# Clear screen between rounds.

@@ -34,7 +34,7 @@ if age > 18:
 pages = 0
 word_per_page = 0
 pages = int(input("Number of pages: "))
-word_per_page == int(input("Number of words per page: ")) # should not be ==
+word_per_page = int(input("Number of words per page: ")) # should not be ==
 total_words = pages * word_per_page
 print(total_words)
 
@@ -44,7 +44,7 @@ def mutate(a_list):
   b_list = []
   for item in a_list:
     new_item = item * 2
-  b_list.append(new_item) # add 2 more spaces
+    b_list.append(new_item) # add 2 more spaces
   print(b_list)
 
 mutate([1,2,3,5,8,13])
