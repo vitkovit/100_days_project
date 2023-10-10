@@ -38,7 +38,7 @@ word_per_page = int(input("Number of words per page: ")) # should not be ==
 total_words = pages * word_per_page
 print(total_words)
 
-#%%
+#%% 
 #Use a Debugger
 def mutate(a_list):
   b_list = []

@@ -59,7 +59,7 @@ while len(player_hand) < 21 and end_game == False:
       hit = input('hit me y|n :')
       if hit == 'y':
             play_game()
-            display_the_game()
+            display_the_game() 
       else:
             end_game = True          
 # deal_card()

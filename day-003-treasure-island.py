@@ -44,7 +44,7 @@ weight = float(input("enter your weight in kg: "))
 bmi = weight / (height)**2
 bmi_status = ["are underweight", "have a normal weight", "are slightly overweight", "are obese", "are clinically obese"]
 
-if bmi < 18.5:
+if bmi < 18.5: 
     status = 0
 elif 18.5 <= bmi < 25:
     status = 1
